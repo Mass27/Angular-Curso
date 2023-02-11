@@ -1,0 +1,24 @@
+<p>Listado de Heroes</p>
+
+
+<div *ngIf=" cazadorBorrado; else noBorrado ">
+    <h3>Cazador Eliminado </h3>
+    <small>El cazador eliminado fue: {{ cazadorBorrado }}</small>
+</div>
+
+<ng-template #noBorrado>
+    <h3>NIngun Cazador se ha eliminado</h3>
+</ng-template>
+
+
+<ul>
+<li *ngFor="let cazador of cazadores">     
+    {{ cazador }}
+</li>
+</ul>
+
+
+
+<button (click)="borrarCazador()">
+    Borrar
+</button>
